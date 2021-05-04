@@ -1,0 +1,35 @@
+<resources>
+    <string name="app_name">Quiz App</string>
+    <string name="welcome">Welcome to</string>
+    <string name="login_here">Login here</string>
+    <string name="already_have_an_account">Already have an account?</string>
+    <string name="quiz_app">Quiz App</string>
+    <string name="email">Email</string>
+    <string name="password">Password</string>
+    <string name="login">Login</string>
+    <string name="home">Home</string>
+    <string name="title_activity_home">ScrollingActivity</string>
+    <string name="hey_there_check_out_our_latest_quizzes">Hey there! Check out our latest quizzes</string>
+    <string name="good_questions_inform">Good questions inform,</string>
+    <string name="great_questions_transform">Great questions transform.</string>
+    <string name="splash_screen_background_image">Splash screen background image</string>
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+    <string name="nav_header_title">Android Studio</string>
+    <string name="nav_header_subtitle">android.studio@android.com</string>
+    <string name="nav_header_desc">Navigation header</string>
+    <string name="action_settings">Settings</string>
+
+    <string name="menu_home">Home</string>
+    <string name="menu_gallery">Gallery</string>
+    <string name="menu_slideshow">Slideshow</string>
+    <string name="set_up_your_account">Set up your account</string>
+    <string name="username">Username</string>
+    <string name="app_icon">app icon</string>
+    <string name="sign_up">sign up</string>
+    <string name="create_a_new_account">Create a new account</string>
+    <string name="sign_in">sign in</string>
+    <string name="don_t_have_an_account">Don\'t have an account?</string>
+    <string name="subjects">Subjects</string>
+    <string name="progress">Progress</string>
+</resources>

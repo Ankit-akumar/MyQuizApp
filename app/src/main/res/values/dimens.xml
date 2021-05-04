@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <dimen name="vertical_padding">10dp</dimen>
+    <dimen name="horizontal_padding">5dp</dimen>
+    <dimen name="screen_padding">14dp</dimen>
+</resources>
