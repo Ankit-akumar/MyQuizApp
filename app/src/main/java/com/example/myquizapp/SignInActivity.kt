@@ -16,10 +16,9 @@ class SignInActivity : AppCompatActivity() {
             finish()
         }
 
-        tv_sign_up_here.setOnClickListener{
+        tv_sign_up_here.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
-            finish()
         }
     }
 }

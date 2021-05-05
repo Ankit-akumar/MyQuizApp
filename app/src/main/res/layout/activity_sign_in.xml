@@ -26,7 +26,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/vertical_padding"
-        android:text="@string/create_a_new_account"
+        android:text="@string/login_to_your_account"
         android:textColor="@color/black"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -36,7 +36,7 @@
 
     <EditText
         android:id="@+id/et_username"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/vertical_padding"
         android:autofillHints="@string/username"
@@ -50,7 +50,7 @@
 
     <EditText
         android:id="@+id/et_password"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/vertical_padding"
         android:autofillHints="@string/password"
@@ -61,6 +61,19 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/et_username" />
 
+    <TextView
+        android:id="@+id/tv_forgot_password"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/forgot_password"
+        app:drawableStartCompat="@drawable/forgot_password_icon"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        android:textColor="@color/blue"
+        android:textStyle="bold"
+        app:layout_constraintTop_toBottomOf="@id/et_password" />
+
     <Button
         android:id="@+id/btnSignIn"
         android:layout_width="0dp"
@@ -69,11 +82,11 @@
         android:background="@drawable/custom_button"
         android:text="@string/login"
         android:textColor="@color/white"
-        android:textStyle="bold"
         android:textSize="16sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/et_password" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_forgot_password" />
 
     <TextView
         android:id="@+id/textView4"
@@ -94,8 +107,8 @@
         android:layout_marginStart="@dimen/horizontal_padding"
         android:layout_marginTop="@dimen/vertical_padding"
         android:text="@string/sign_up"
-        android:textColor="@color/black"
         android:textAllCaps="true"
+        android:textColor="@color/blue"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView4"
         app:layout_constraintTop_toBottomOf="@+id/btnSignIn" />

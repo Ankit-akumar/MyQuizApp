@@ -3,4 +3,5 @@
     <dimen name="vertical_padding">10dp</dimen>
     <dimen name="horizontal_padding">5dp</dimen>
     <dimen name="screen_padding">14dp</dimen>
+    <dimen name="title_text_size">16sp</dimen>
 </resources>

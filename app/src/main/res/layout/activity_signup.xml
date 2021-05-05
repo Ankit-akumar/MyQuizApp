@@ -106,7 +106,7 @@
         android:layout_marginTop="@dimen/vertical_padding"
         android:text="@string/login"
         android:textAllCaps="true"
-        android:textColor="@color/black"
+        android:textColor="@color/blue"
         android:textStyle="bold"
         app:layout_constraintStart_toEndOf="@+id/textView"
         app:layout_constraintTop_toBottomOf="@+id/btnSignUp" />
