@@ -1,5 +1,5 @@
 package com.example.myquizapp
 
 object Constants {
-    const val USER_NAME:String = "user name"
+    var CURRENT_USER_ID:Int = 0
 }
