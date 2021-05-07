@@ -13,43 +13,44 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
 ) {
     companion object {
         // Database Information
-        private const val DATABASE_NAME: String = "MyQuizAppDatabase"
-        private const val DATABASE_VERSION: Int = 1
+        private const val DATABASE_NAME = "MyQuizAppDatabase"
+        private const val DATABASE_VERSION = 1
 
         // Table Names
         private const val USER_TABLE: String = "Users"
         private const val QUIZ_TABLE: String = "Quizzes"
 
         // Users Table Columns
-        private const val KEY_USER_ID: String = "user id"
-        private const val KEY_USERNAME: String = "username"
-        private const val KEY_USER_PASSWORD: String = "password"
-        private const val KEY_USER_EMAIL: String = "email"
-        private const val KEY_USER_PROFILE_PICTURE: String = "profile picture"
+        private const val KEY_USER_ID = "user_id"
+        private const val KEY_USERNAME = "username"
+        private const val KEY_USER_PASSWORD = "password"
+        private const val KEY_USER_EMAIL = "email"
+        private const val KEY_USER_PROFILE_PICTURE = "profile_picture"
+        private const val KEY_USER_IS_CURRENT_USER = "is_current_user"
 
         // Quizzes Table Columns
-        private const val KEY_QUIZ_ID: String = "quiz id"
-        private const val KEY_QUIZ_TITLE: String = "title"
-        private const val KEY_QUIZ_SUBTITLE: String = "subtitle"
-        private const val KEY_QUIZ_IMAGE: String = "quiz image"
+//        private const val KEY_QUIZ_ID = "quiz id"
+//        private const val KEY_QUIZ_TITLE = "title"
+//        private const val KEY_QUIZ_SUBTITLE = "subtitle"
+//        private const val KEY_QUIZ_IMAGE = "quiz image"
 
-        private val databaseHandler: DatabaseHandler? = null
+        private var databaseHandler: DatabaseHandler? = null
 
         @Synchronized
         fun getInstance(context: Context): DatabaseHandler {
-            if (databaseHandler == null) DatabaseHandler(context.applicationContext)
+            if (databaseHandler == null) databaseHandler = DatabaseHandler(context.applicationContext)
             return databaseHandler!!
         }
     }
 
     // After creating database create tables
     override fun onCreate(db: SQLiteDatabase?) {
-        val createTableQuiz =
-            ("CREATE TABLE $QUIZ_TABLE ($KEY_QUIZ_ID INTEGER PRIMARY KEY, $KEY_QUIZ_TITLE TEXT, $KEY_QUIZ_SUBTITLE TEXT, $KEY_QUIZ_IMAGE TEXT)")
+//        val createTableQuiz =
+//            ("CREATE TABLE $QUIZ_TABLE ($KEY_QUIZ_ID INTEGER PRIMARY KEY, $KEY_QUIZ_TITLE TEXT, $KEY_QUIZ_SUBTITLE TEXT, $KEY_QUIZ_IMAGE TEXT)")
         val createTableUser =
-            ("CREATE TABLE $USER_TABLE ($KEY_USER_ID INTEGER PRIMARY KEY, $KEY_USERNAME TEXT, $KEY_USER_EMAIL TEXT, $KEY_USER_PASSWORD TEXT, $KEY_USER_PROFILE_PICTURE TEXT)")
+            ("CREATE TABLE $USER_TABLE ($KEY_USER_ID INTEGER PRIMARY KEY, $KEY_USERNAME TEXT, $KEY_USER_EMAIL TEXT, $KEY_USER_PASSWORD TEXT, $KEY_USER_PROFILE_PICTURE TEXT, $KEY_USER_IS_CURRENT_USER INTEGER)")
         db?.execSQL(createTableUser)
-        db?.execSQL(createTableQuiz)
+//        db?.execSQL(createTableQuiz)
     }
 
     // When table is upgraded drop existing tables and create new ones
@@ -61,16 +62,14 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         }
     }
 
-    /* In addUser,
-       when returned value
-       is 1 -> transaction successful
-       is -1 -> username already exists
-       is -2 -> email already exists
-       is -3 -> SQLException was thrown
+    /* The addUser returns,
+       1 -> transaction successful
+       -1 -> username already exists
+       -2 -> email already exists
+       -3 -> SQLException was thrown
      */
     fun addUser(user: User): Long {
         var success = 1L
-        val db = this.writableDatabase
 
         val pairUsernameAndEmail = doesUserExists(user)
         when {
@@ -81,6 +80,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
                 success = -2L
             }
             else -> {
+                val db = this.writableDatabase
                 db.beginTransaction()
                 try {
                     val contentValues = ContentValues()
@@ -97,7 +97,6 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
                 }
             }
         }
-        db.close()
         return success
     }
 
@@ -106,6 +105,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         var usernameExists = false
         var emailExists = false
         val db = this.readableDatabase
+        db.beginTransaction()
         // Query username
         val queryOnUsername = "SELECT * FROM $USER_TABLE WHERE $KEY_USERNAME = ?"
         // Query email
@@ -115,11 +115,42 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         cursor = db.rawQuery(queryOnEmail, arrayOf(user.email))
         if (cursor.moveToFirst()) emailExists = true
         cursor.close()
-        db.close()
+        db.endTransaction()
         return Pair(first = usernameExists, second = emailExists)
     }
-}
 
+    fun setCurrentUser(user: User): Boolean {
+        var success = false
+        val db = this.writableDatabase
+        db.beginTransaction()
+        val query = "UPDATE $USER_TABLE SET $KEY_USER_IS_CURRENT_USER = ? WHERE $KEY_USERNAME = ?"
+        val cursor = db.rawQuery(query, arrayOf("1", user.userName))
+        if (cursor.moveToFirst()) {
+            success = true
+            db.setTransactionSuccessful()
+        }
+        cursor.close()
+        db.endTransaction()
+        return success
+    }
+
+    fun getCurrentUser(): User {
+        val db = this.readableDatabase
+        db.beginTransaction()
+        val query = "SELECT * FROM $USER_TABLE WHERE $KEY_USER_IS_CURRENT_USER = ?"
+        val cursor = db.rawQuery(query, arrayOf("1"))
+        val user = User(
+            cursor.getLong(cursor.getColumnIndex(KEY_USER_ID)),
+            cursor.getString(cursor.getColumnIndex(KEY_USERNAME)),
+            cursor.getString(cursor.getColumnIndex(KEY_USER_PASSWORD)),
+            cursor.getString(cursor.getColumnIndex(KEY_USER_EMAIL)),
+            cursor.getInt(cursor.getColumnIndex(KEY_USER_PROFILE_PICTURE))
+        )
+        cursor.close()
+        db.endTransaction()
+        return user
+    }
+}
 
 
 

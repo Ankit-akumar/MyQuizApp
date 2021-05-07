@@ -3,6 +3,7 @@ package com.example.myquizapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_signup.*
 
@@ -29,9 +30,11 @@ class SignUpActivity : AppCompatActivity() {
                     .show()
                 -3L -> Toast.makeText(this, "An error occurred", Toast.LENGTH_SHORT).show()
                 else -> {
+                    // Set user as the current logged in user
+                    databaseHandler.setCurrentUser(user)
+                    Log.d("AFTER SET CURRENT USER","done")
                     // Go to main activity
                     val intent = Intent(this, MainActivity::class.java)
-                    intent.putExtra("userID", user.userId)
                     startActivity(intent)
                     finish()
                 }
@@ -41,6 +44,7 @@ class SignUpActivity : AppCompatActivity() {
         tvBtnLoginHere.setOnClickListener {
             val intent = Intent(this, SignInActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }

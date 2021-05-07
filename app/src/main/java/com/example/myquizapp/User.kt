@@ -5,15 +5,10 @@ class User {
     var userName = "username"
     var password = "password"
     var email = "email"
-    var profilePicture = 1
+    var profilePicture = R.drawable.profile_pic_default_big
+    var isCurrentUser = 0
 
-    constructor (
-        userId: Long,
-        userName: String,
-        password: String,
-        email: String,
-        profilePicture: Int
-    ) {
+    constructor (userId: Long, userName: String, password: String, email: String, profilePicture: Int) {
         this.userId = userId
         this.userName = userName
         this.password = password

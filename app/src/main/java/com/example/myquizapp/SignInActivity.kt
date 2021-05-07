@@ -21,13 +21,14 @@ class SignInActivity : AppCompatActivity() {
 
             // Check if user exists
             val databaseHandler = DatabaseHandler.getInstance(this)
-            val pairUsernameAndEmail: Pair<Boolean, Boolean> = databaseHandler.doesUserExists(user)
+            val pairUsernameAndEmail = databaseHandler.doesUserExists(user)
 
             if (pairUsernameAndEmail.first or pairUsernameAndEmail.second) {
-                // TODO : Get real user and send real User ID
+                // Set user as the current logged in user
+                databaseHandler.setCurrentUser(user)
+
                 // go to main activity
                 val intent = Intent(this, MainActivity::class.java)
-                intent.putExtra("userID", user.userId)
                 startActivity(intent)
                 finish()
             } else {
@@ -38,6 +39,7 @@ class SignInActivity : AppCompatActivity() {
         tv_sign_up_here.setOnClickListener {
             val intent = Intent(this, SignUpActivity::class.java)
             startActivity(intent)
+            finish()
         }
     }
 }
