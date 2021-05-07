@@ -5,6 +5,7 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
+import android.util.Log
 import java.lang.Exception
 
 class DatabaseHandler(context: Context) : SQLiteOpenHelper(
@@ -38,7 +39,8 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
 
         @Synchronized
         fun getInstance(context: Context): DatabaseHandler {
-            if (databaseHandler == null) databaseHandler = DatabaseHandler(context.applicationContext)
+            if (databaseHandler == null) databaseHandler =
+                DatabaseHandler(context.applicationContext)
             return databaseHandler!!
         }
     }
@@ -123,29 +125,36 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         var success = false
         val db = this.writableDatabase
         db.beginTransaction()
-        val query = "UPDATE $USER_TABLE SET $KEY_USER_IS_CURRENT_USER = ? WHERE $KEY_USERNAME = ?"
-        val cursor = db.rawQuery(query, arrayOf("1", user.userName))
-        if (cursor.moveToFirst()) {
+        val contentValues = ContentValues()
+        contentValues.put(KEY_USER_IS_CURRENT_USER, "1")
+        if (db.update(
+                USER_TABLE,
+                contentValues,
+                "$KEY_USER_ID = ?",
+                arrayOf("${user.userId}")
+            ) == 1
+        ) {
             success = true
             db.setTransactionSuccessful()
         }
-        cursor.close()
         db.endTransaction()
         return success
     }
 
-    fun getCurrentUser(): User {
+    fun getCurrentUser(): User? {
+        var user: User? = null
         val db = this.readableDatabase
         db.beginTransaction()
         val query = "SELECT * FROM $USER_TABLE WHERE $KEY_USER_IS_CURRENT_USER = ?"
         val cursor = db.rawQuery(query, arrayOf("1"))
-        val user = User(
-            cursor.getLong(cursor.getColumnIndex(KEY_USER_ID)),
-            cursor.getString(cursor.getColumnIndex(KEY_USERNAME)),
-            cursor.getString(cursor.getColumnIndex(KEY_USER_PASSWORD)),
-            cursor.getString(cursor.getColumnIndex(KEY_USER_EMAIL)),
-            cursor.getInt(cursor.getColumnIndex(KEY_USER_PROFILE_PICTURE))
-        )
+        if (cursor.moveToFirst())
+            user = User(
+                cursor.getLong(cursor.getColumnIndex(KEY_USER_ID)),
+                cursor.getString(cursor.getColumnIndex(KEY_USERNAME)),
+                cursor.getString(cursor.getColumnIndex(KEY_USER_PASSWORD)),
+                cursor.getString(cursor.getColumnIndex(KEY_USER_EMAIL)),
+                cursor.getInt(cursor.getColumnIndex(KEY_USER_PROFILE_PICTURE))
+            )
         cursor.close()
         db.endTransaction()
         return user

@@ -3,6 +3,7 @@ package com.example.myquizapp
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_sign_in.*
 
@@ -25,7 +26,8 @@ class SignInActivity : AppCompatActivity() {
 
             if (pairUsernameAndEmail.first or pairUsernameAndEmail.second) {
                 // Set user as the current logged in user
-                databaseHandler.setCurrentUser(user)
+                if(databaseHandler.setCurrentUser(user)) Log.d("Cursor set", "Cursor is set")
+                else Log.d("Cursor set","failed")
 
                 // go to main activity
                 val intent = Intent(this, MainActivity::class.java)
