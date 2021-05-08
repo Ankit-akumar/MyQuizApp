@@ -47,21 +47,21 @@ class DatabaseHandler private constructor(context: Context) : SQLiteOpenHelper(
     // After creating database create tables
     override fun onCreate(db: SQLiteDatabase?) {
         // create scripts
-        val createTableQuiz =
-            ("CREATE TABLE $QUIZ_TABLE ($KEY_QUIZ_ID INTEGER PRIMARY KEY, $KEY_QUIZ_TITLE TEXT, $KEY_QUIZ_SUBTITLE TEXT, $KEY_QUIZ_IMAGE TEXT)")
+//        val createTableQuiz =
+//            ("CREATE TABLE $QUIZ_TABLE ($KEY_QUIZ_ID INTEGER PRIMARY KEY, $KEY_QUIZ_TITLE TEXT, $KEY_QUIZ_SUBTITLE TEXT, $KEY_QUIZ_IMAGE TEXT)")
         val createTableUser =
             ("CREATE TABLE $USER_TABLE ($KEY_USER_ID INTEGER PRIMARY KEY, $KEY_USERNAME TEXT, $KEY_USER_EMAIL TEXT, $KEY_USER_PASSWORD TEXT, $KEY_USER_PROFILE_PICTURE TEXT, $KEY_USER_IS_CURRENT_USER INTEGER)")
         db?.execSQL(createTableUser)
-        db?.execSQL(createTableQuiz)
+//        db?.execSQL(createTableQuiz)
     }
 
     // When table is upgraded drop existing tables and create new ones
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-//        if (oldVersion != newVersion) {
-//            db?.execSQL("DROP TABLE IF EXISTS $USER_TABLE")
+        if (oldVersion != newVersion) {
+            db?.execSQL("DROP TABLE IF EXISTS $USER_TABLE")
 //            db?.execSQL("DROP TABLE IF EXISTS $QUIZ_TABLE")
-//            onCreate(db)
-//        }
+            onCreate(db)
+        }
 
     }
 
