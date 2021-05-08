@@ -5,10 +5,8 @@ import android.content.Context
 import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteOpenHelper
-import android.util.Log
-import java.lang.Exception
 
-class DatabaseHandler(context: Context) : SQLiteOpenHelper(
+class DatabaseHandler private constructor(context: Context) : SQLiteOpenHelper(
     context, DATABASE_NAME, null,
     DATABASE_VERSION
 ) {
@@ -30,11 +28,12 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         private const val KEY_USER_IS_CURRENT_USER = "is_current_user"
 
         // Quizzes Table Columns
-//        private const val KEY_QUIZ_ID = "quiz id"
-//        private const val KEY_QUIZ_TITLE = "title"
-//        private const val KEY_QUIZ_SUBTITLE = "subtitle"
-//        private const val KEY_QUIZ_IMAGE = "quiz image"
+        private const val KEY_QUIZ_ID = "quiz id"
+        private const val KEY_QUIZ_TITLE = "title"
+        private const val KEY_QUIZ_SUBTITLE = "subtitle"
+        private const val KEY_QUIZ_IMAGE = "quiz image"
 
+        // Making this a Singleton class
         private var databaseHandler: DatabaseHandler? = null
 
         @Synchronized
@@ -47,24 +46,26 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
 
     // After creating database create tables
     override fun onCreate(db: SQLiteDatabase?) {
-//        val createTableQuiz =
-//            ("CREATE TABLE $QUIZ_TABLE ($KEY_QUIZ_ID INTEGER PRIMARY KEY, $KEY_QUIZ_TITLE TEXT, $KEY_QUIZ_SUBTITLE TEXT, $KEY_QUIZ_IMAGE TEXT)")
+        // create scripts
+        val createTableQuiz =
+            ("CREATE TABLE $QUIZ_TABLE ($KEY_QUIZ_ID INTEGER PRIMARY KEY, $KEY_QUIZ_TITLE TEXT, $KEY_QUIZ_SUBTITLE TEXT, $KEY_QUIZ_IMAGE TEXT)")
         val createTableUser =
             ("CREATE TABLE $USER_TABLE ($KEY_USER_ID INTEGER PRIMARY KEY, $KEY_USERNAME TEXT, $KEY_USER_EMAIL TEXT, $KEY_USER_PASSWORD TEXT, $KEY_USER_PROFILE_PICTURE TEXT, $KEY_USER_IS_CURRENT_USER INTEGER)")
         db?.execSQL(createTableUser)
-//        db?.execSQL(createTableQuiz)
+        db?.execSQL(createTableQuiz)
     }
 
     // When table is upgraded drop existing tables and create new ones
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
-        if (oldVersion != newVersion) {
-            db?.execSQL("DROP TABLE IF EXISTS $USER_TABLE")
-            db?.execSQL("DROP TABLE IF EXISTS $QUIZ_TABLE")
-            onCreate(db)
-        }
+//        if (oldVersion != newVersion) {
+//            db?.execSQL("DROP TABLE IF EXISTS $USER_TABLE")
+//            db?.execSQL("DROP TABLE IF EXISTS $QUIZ_TABLE")
+//            onCreate(db)
+//        }
+
     }
 
-    /* The addUser returns,
+    /* addUser adds a new user to database and returns,
        1 -> transaction successful
        -1 -> username already exists
        -2 -> email already exists
@@ -102,7 +103,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         return success
     }
 
-    // returns true if user already exists
+    // Returns true if user already exists
     fun doesUserExists(user: User): Pair<Boolean, Boolean> {
         var usernameExists = false
         var emailExists = false
@@ -113,14 +114,23 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         // Query email
         val queryOnEmail = "SELECT * FROM $USER_TABLE WHERE $KEY_USER_EMAIL = ?"
         var cursor: Cursor = db.rawQuery(queryOnUsername, arrayOf(user.userName))
-        if (cursor.moveToFirst()) usernameExists = true
+
+        // If cursor found the required record using username then check if password provided by the user is correct
+        if (cursor.moveToFirst() && (cursor.getString(cursor.getColumnIndex(KEY_USER_PASSWORD)) == user.password)) {
+            usernameExists = true
+        }
+
         cursor = db.rawQuery(queryOnEmail, arrayOf(user.email))
-        if (cursor.moveToFirst()) emailExists = true
+        // If cursor found the required record using email then check if password provided by the user is correct
+        if (cursor.moveToFirst() && (cursor.getString(cursor.getColumnIndex(KEY_USER_PASSWORD)) == user.password)) {
+            emailExists = true
+        }
         cursor.close()
         db.endTransaction()
         return Pair(first = usernameExists, second = emailExists)
     }
 
+    // Takes a user and sets it as the current logged in user
     fun setCurrentUser(user: User): Boolean {
         var success = false
         val db = this.writableDatabase
@@ -141,6 +151,7 @@ class DatabaseHandler(context: Context) : SQLiteOpenHelper(
         return success
     }
 
+    // Returns the current logged in user
     fun getCurrentUser(): User? {
         var user: User? = null
         val db = this.readableDatabase

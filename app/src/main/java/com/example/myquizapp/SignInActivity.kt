@@ -20,21 +20,22 @@ class SignInActivity : AppCompatActivity() {
                 User(et_username.text.toString(), et_password.text.toString())
             }
 
-            // Check if user exists
             val databaseHandler = DatabaseHandler.getInstance(this)
+            // Check if user exists
             val pairUsernameAndEmail = databaseHandler.doesUserExists(user)
 
             if (pairUsernameAndEmail.first or pairUsernameAndEmail.second) {
+                // TODO: Remove this
                 // Set user as the current logged in user
-                if(databaseHandler.setCurrentUser(user)) Log.d("Cursor set", "Cursor is set")
-                else Log.d("Cursor set","failed")
+                if (databaseHandler.setCurrentUser(user)) Log.d("Cursor set", "Cursor is set")
+                else Log.d("Cursor set", "failed")
 
                 // go to main activity
                 val intent = Intent(this, MainActivity::class.java)
                 startActivity(intent)
                 finish()
             } else {
-                Toast.makeText(this, "User not found", Toast.LENGTH_SHORT).show()
+                tv_warning.text = getString(R.string.user_not_found)
             }
         }
 

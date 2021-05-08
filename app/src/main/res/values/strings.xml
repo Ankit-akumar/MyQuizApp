@@ -9,20 +9,7 @@
     <string name="login">Login</string>
     <string name="home">Home</string>
     <string name="title_activity_home">ScrollingActivity</string>
-    <string name="hey_there_check_out_our_latest_quizzes">Hey there! Check out our latest quizzes</string>
-    <string name="good_questions_inform">Good questions inform,</string>
-    <string name="great_questions_transform">Great questions transform.</string>
     <string name="splash_screen_background_image">Splash screen background image</string>
-    <string name="navigation_drawer_open">Open navigation drawer</string>
-    <string name="navigation_drawer_close">Close navigation drawer</string>
-    <string name="nav_header_title">Android Studio</string>
-    <string name="nav_header_subtitle">android.studio@android.com</string>
-    <string name="nav_header_desc">Navigation header</string>
-    <string name="action_settings">Settings</string>
-
-    <string name="menu_home">Home</string>
-    <string name="menu_gallery">Gallery</string>
-    <string name="menu_slideshow">Slideshow</string>
     <string name="set_up_your_account">Set up your account</string>
     <string name="username">Username</string>
     <string name="app_icon">app icon</string>
@@ -34,4 +21,13 @@
     <string name="login_to_your_account">Login to your account</string>
     <string name="forgot_password">Forgot Password</string>
     <string name="top_quizzes">top quizzes</string>
+    <string name="username_must_contain_Letters_and_digits_only">Username must contain letters and digits only</string>
+    <string name="invalid_email">Invalid Email</string>
+    <string name="password_must_contain_Letters_and_digits_only">Password must contain letters and digits only</string>
+    <string name="username_must_be_5_characters_long">Username must be 5 characters long</string>
+    <string name="password_must_be_5_characters_long">Password must be 5 characters long</string>
+    <string name="Username_already_exists">Username already exists</string>
+    <string name="email_already_registered">This email is already registered</string>
+    <string name="an_error_occurred">Oops! an error occurred</string>
+    <string name="user_not_found">User not found</string>
 </resources>
