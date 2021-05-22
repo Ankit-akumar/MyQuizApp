@@ -22,7 +22,7 @@ class LoginActivity : AppCompatActivity() {
 
             // make user object from input data
             val user =
-                if (android.util.Patterns.EMAIL_ADDRESS.matcher(et_username.text).matches()) {
+                if (android.util.Patterns.EMAIL_ADDRESS.matcher(et_username.text.toString()).matches()) {
                     User(
                         email = et_username.text.toString(),
                         password = et_password.text.toString()
@@ -48,7 +48,7 @@ class LoginActivity : AppCompatActivity() {
                 else -> {
                     // Set user id and continue with next activity
                     CURRENT_USERID = userid!!
-                    val intent = Intent(this, MainActivity::class.java)
+                    val intent = Intent(this, CategoryActivity::class.java)
                     startActivity(intent)
                     finish()
                 }

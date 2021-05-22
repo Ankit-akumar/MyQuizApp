@@ -18,7 +18,7 @@
             android:theme="@style/CustomNoActionBarTheme"
             android:windowSoftInputMode="adjustPan" />
         <activity
-            android:name=".MainActivity"
+            android:name=".CategoryActivity"
             android:theme="@style/CustomNoActionBarTheme" />
         <activity
             android:name=".SplashScreen"

@@ -6,4 +6,5 @@
     <dimen name="vertical_margin">10dp</dimen>
     <dimen name="horizontal_margin">5sp</dimen>
     <dimen name="screen_padding">12dp</dimen>
+    <dimen name="card_corner_radius">5dp</dimen>
 </resources>

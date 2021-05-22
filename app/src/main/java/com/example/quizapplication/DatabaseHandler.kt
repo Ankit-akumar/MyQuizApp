@@ -2,7 +2,6 @@ package com.example.quizapplication
 
 import android.content.ContentValues
 import android.content.Context
-import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
@@ -14,30 +13,21 @@ class DatabaseHandler private constructor(context: Context) :
     companion object {
         // Database Information
         const val DATABASE_NAME = "QuizApplicationDatabase"
-        const val DATABASE_VERSION = 1
+        const val DATABASE_VERSION = 2
 
         // Table names
         const val TABLE_USERS = "Users"
-        const val TABLE_QUIZZES = "Quizzes"
 
         // User properties
         const val KEY_USERID = "user_id"
         const val KEY_USERNAME = "username"
         const val KEY_USER_PASSWORD = "password"
         const val KEY_USER_EMAIL = "email"
-        const val KEY_USER_STATS = "stats"
-
-        // Quiz properties
-        const val KEY_QUIZ_ID = "quiz_id"
-        const val KEY_QUIZ_NAME = "quiz_name"
-        const val KEY_QUIZ_DESC = "description"
-        const val KEY_QUIZ_IMAGE = "quiz_image"
 
         // Making class singleton
-        // Database handler object
-        var databaseHandler: DatabaseHandler? = null
+        var databaseHandler: DatabaseHandler? = null     // Database handler object
 
-        // factory method for database handler object
+        // Factory method for database handler object
         @Synchronized
         fun getInstance(context: Context): DatabaseHandler? {
             if (databaseHandler == null) databaseHandler =
@@ -52,25 +42,14 @@ class DatabaseHandler private constructor(context: Context) :
                 "$KEY_USERID INTEGER PRIMARY KEY, " +
                 "$KEY_USERNAME TEXT NOT NULL," +
                 "$KEY_USER_EMAIL TEXT NOT NULL," +
-                "$KEY_USER_PASSWORD TEXT NOT NULL," +
-                "$KEY_USER_STATS TEXT NOT NULL" +
-                ")"
-
-        val createQuizTable = "CREATE TABLE $TABLE_QUIZZES(" +
-                "$KEY_QUIZ_ID INTEGER PRIMARY KEY," +
-                "$KEY_QUIZ_NAME TEXT NOT NULL," +
-                "$KEY_QUIZ_DESC TEXT NOT NULL," +
-                "$KEY_QUIZ_IMAGE INTEGER NOT NULL" +
-                ")"
+                "$KEY_USER_PASSWORD TEXT NOT NULL)"
 
         db?.execSQL(createUserTable)
-        db?.execSQL(createQuizTable)
     }
 
     override fun onUpgrade(db: SQLiteDatabase?, oldVersion: Int, newVersion: Int) {
         if (oldVersion != newVersion) {
             db?.execSQL("DROP TABLE IF EXISTS $TABLE_USERS")
-            db?.execSQL("DROP TABLE IF EXISTS $TABLE_QUIZZES")
             onCreate(db)
         }
     }
@@ -94,7 +73,7 @@ class DatabaseHandler private constructor(context: Context) :
                 "SELECT * FROM $TABLE_USERS WHERE ($KEY_USER_EMAIL = ?)",
                 arrayOf(user.email)
             )
-            if(cursor.moveToFirst()) {
+            if (cursor.moveToFirst()) {
                 cursor.close()
                 return -2 // Email already registered
             }
@@ -104,7 +83,6 @@ class DatabaseHandler private constructor(context: Context) :
             record.put(KEY_USERNAME, user.username)
             record.put(KEY_USER_EMAIL, user.email)
             record.put(KEY_USER_PASSWORD, user.password)
-            record.put(KEY_USER_STATS, user.stats)
             db.insertOrThrow(TABLE_USERS, null, record)
             db.setTransactionSuccessful()
         } catch (ex: SQLiteException) {
@@ -164,8 +142,7 @@ class DatabaseHandler private constructor(context: Context) :
                 user = User(
                     username = cursor.getString(cursor.getColumnIndex(KEY_USERNAME)),
                     password = cursor.getString(cursor.getColumnIndex(KEY_USER_PASSWORD)),
-                    email = cursor.getString(cursor.getColumnIndex(KEY_USER_EMAIL)),
-                    stats = cursor.getLong(cursor.getColumnIndex(KEY_USER_STATS))
+                    email = cursor.getString(cursor.getColumnIndex(KEY_USER_EMAIL))
                 )
             }
             cursor.close()
