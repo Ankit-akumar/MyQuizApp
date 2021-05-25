@@ -1,21 +1,33 @@
 package com.example.quizapplication
 
+import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.view.View
 import kotlinx.android.synthetic.main.activity_category.*
 
 class CategoryActivity : AppCompatActivity() {
-//    lateinit var questions: ArrayList<Question>
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_category)
 
-//        val rvQuiz = rv_quizzes as RecyclerView
-//        questions = Question.createQuizList(20)
-//        val adapter = QuizAdapter(questions)
-//        rvQuiz.adapter = adapter
-//        rvQuiz.layoutManager = LinearLayoutManager(this)
+        cv_aptitude_test.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            Constants.CATEGORY_SELECTED = "aptitude"
+            startActivity(intent)
+        }
 
+        cv_reasoning_test.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            Constants.CATEGORY_SELECTED = "reasoning"
+            startActivity(intent)
+        }
 
+        cv_verbal_test.setOnClickListener {
+            val intent = Intent(this, MainActivity::class.java)
+            Constants.CATEGORY_SELECTED = "verbal ability"
+            startActivity(intent)
+        }
     }
 }

@@ -1,0 +1,366 @@
+{
+  "aptitude": [
+    {
+      "ques_id": 1,
+      "question": "A train running at the speed of 60 km/hr crosses a pole in 9 seconds. What is the length of the train?",
+      "option1": "120 metres",
+      "option2": "324 metres",
+      "option3": "180 metres",
+      "option4": "150 metres",
+      "answer": 4
+    },
+    {
+      "ques_id": 2,
+      "question": "The length of the bridge, which a train 130 metres long and travelling at 45 km/hr can cross in 30 seconds, is:",
+      "option1": "200 metres",
+      "option2": "225 metres",
+      "option3": "245 metres",
+      "option4": "250 metres",
+      "answer": 3
+    },
+    {
+      "ques_id": 3,
+      "question": "Two trains running in opposite directions cross a man standing on the platform in 27 seconds and 17 seconds respectively and they cross each other in 23 seconds. The ratio of their speeds is:",
+      "option1": "1:3",
+      "option2": "3:2",
+      "option3": "3:4",
+      "option4": "None of these",
+      "answer": 2
+    },
+    {
+      "ques_id": 4,
+      "question": "If selling price is doubled, the profit triples. Find the profit percent.",
+      "option1": "200",
+      "option2": "100",
+      "option3": "120",
+      "option4": "None of these",
+      "answer": 2
+    },
+    {
+      "ques_id": 5,
+      "question": "A vendor bought toffees at 6 for a rupee. How many for a rupee must he sell to gain 20%?",
+      "option1": "3",
+      "option2": "4",
+      "option3": "5",
+      "option4": "6",
+      "answer": 3
+    },
+    {
+      "ques_id": 6,
+      "question": "A trader mixes 26 kg of rice at Rs. 20 per kg with 30 kg of rice of other variety at Rs. 36 per kg and sells the mixture at Rs. 30 per kg. His profit percent is:",
+      "option1": "No profit, no loss",
+      "option2": "10%",
+      "option3": "8%",
+      "option4": "5%",
+      "answer": 4
+    },
+    {
+      "ques_id": 7,
+      "question": "Ram purchased 20 dozens of toys at the rate of Rs. 375 per dozen. He sold each one of them at the rate of Rs. 33. What was his percentage profit?",
+      "option1": "3.5",
+      "option2": "4.5",
+      "option3": "5.6",
+      "option4": "6.5",
+      "answer": 3
+    },
+    {
+      "ques_id": 8,
+      "question": "In how many different ways can the letters of the word 'LEADING' be arranged in such a way that the vowels always come together?",
+      "option1": "360",
+      "option2": "730",
+      "option3": "480",
+      "option4": "None of these",
+      "answer": 4
+    },
+    {
+      "ques_id": 9,
+      "question": "In what ways the letters of the word \"PUZZLE\" can be arranged to form the different new words so that the vowels always come together?",
+      "option1": "240",
+      "option2": "250",
+      "option3": "420",
+      "option4": "100",
+      "answer": 1
+    },
+    {
+      "ques_id": 10,
+      "question": "Out of a group of 7 boys and 6 girls, five boys are selected to form a team so that at least 3 boys are there on the team. In how many ways can it be done?",
+      "option1": "645",
+      "option2": "612",
+      "option3": "756",
+      "option4": "120",
+      "answer": 3
+    },
+    {
+      "ques_id": 11,
+      "question": "The speed of a boat in still water is 5km/hr. If the speed of the boat against the stream is 3 km/hr, what is the speed of the stream?",
+      "option1": "1.7 km/hr",
+      "option2": "2 km/hr",
+      "option3": "2.5 km/hr",
+      "option4": "1.5 km/hr",
+      "answer": 2
+    },
+    {
+      "ques_id": 12,
+      "question": "A motorboat, whose speed in 15 km/hr in still water goes 30 km downstream and comes back in a total of 4 hours 30 minutes. The speed of the stream (in km/hr) is",
+      "option1": "4",
+      "option2": "5",
+      "option3": "6",
+      "option4": "10",
+      "answer": 2
+    },
+    {
+      "ques_id": 13,
+      "question": "In one hour, a boat goes 11 km/hr along the stream and 5 km/hr against the stream. The speed of the boat in still water (in km/hr) is:",
+      "option1": "3 km/hr",
+      "option2": "5 km/hr",
+      "option3": "8 km/hr",
+      "option4": "None of these",
+      "answer": 3
+    },
+    {
+      "ques_id": 14,
+      "question": "A man rows to a place 48 km distant and come back in 14 hours. He finds that he can row 4 km with the stream in the same time as 3 km against the stream. The rate of the stream is:",
+      "option1": "1 km/hr",
+      "option2": "1.5 km/hr",
+      "option3": "2 km/hr",
+      "option4": "2.5 km/hr",
+      "answer": 1
+    },
+    {
+      "ques_id": 15,
+      "question": "The sides of a triangle are in the ratio 10: 24:26 and its perimeter is 300 m. What is its area?",
+      "option1": "2500 m^2",
+      "option2": "3000 m^2",
+      "option3": "3500 m^2",
+      "option4": "4000 m^2",
+      "answer": 1
+    },
+    {
+      "ques_id": 16,
+      "question": "A 20 m long, and 15 m broad hall is surrounded by a verandah with a uniform width of 2.5 m. Find the cost of flooring the verandah at Rs. 3.50 per square meter.",
+      "option1": "Rs.500",
+      "option2": "Rs.600",
+      "option3": "Rs.700",
+      "option4": "Rs.900",
+      "answer": 3
+    },
+    {
+      "ques_id": 17,
+      "question": "A right triangle with sides 3 cm, 4 cm and 5 cm is rotated the side of 3 cm to form a cone. The volume of the cone so formed is:",
+      "option1": "12π cm^3",
+      "option2": "15π cm^3",
+      "option3": "16π cm^3",
+      "option4": "20π cm^3",
+      "answer": 1
+    },
+    {
+      "ques_id": 18,
+      "question": "In a box, there are 8 red, 7 blue and 6 green balls. One ball is picked up randomly. What is the probability that it is neither red nor green?",
+      "option1": "1\\3",
+      "option2": "3\\4",
+      "option3": "8\\21",
+      "option4": "None of these",
+      "answer": 1
+    },
+    {
+      "ques_id": 19,
+      "question": "Superman and Batman working together did a task in 6 days. If Superman alone completes the same in 10 days, in how many days Batman alone can complete the same task?",
+      "option1": "13 days",
+      "option2": "15 days",
+      "option3": "14 days",
+      "option4": "16 days",
+      "answer": 2
+    },
+    {
+      "ques_id": 20,
+      "question": "Wonder Woman is thrice as good as workman as Batman and therefore is able to finish a job in 60 days less than Batman. Working together, they can do it in:",
+      "option1": "20 days",
+      "option2": "22 and a half days",
+      "option3": "30 days",
+      "option4": "25 days",
+      "answer": 2
+    }
+  ],
+  "reasoning": [
+    {
+      "ques_id": 1,
+      "question": "Look at this series: 7, 10, 8, 11, 9, 12, … What number should come next?",
+      "option1": "7",
+      "option2": "12",
+      "option3": "10",
+      "option4": "13",
+      "answer": 3
+    },
+    {
+      "ques_id": 2,
+      "question": "Which word does NOT belong with the others?",
+      "option1": "index",
+      "option2": "glossary",
+      "option3": "chapter",
+      "option4": "book",
+      "answer": 4
+    },
+    {
+      "ques_id": 3,
+      "question": "Which word is the odd man out?",
+      "option1": "trivial",
+      "option2": "unimportant",
+      "option3": "insignificant",
+      "option4": "important",
+      "answer": 4
+    },
+    {
+      "ques_id": 4,
+      "question": "CUP : LIP :: BIRD : ?",
+      "option1": "GRASS",
+      "option2": "FOREST",
+      "option3": "BEAK",
+      "option4": "BUSH",
+      "answer": 3
+    },
+    {
+      "ques_id": 5,
+      "question": "Parts : Strap :: Wolf : ?",
+      "option1": "FLOW",
+      "option2": "ANIMAL",
+      "option3": "WOOD",
+      "option4": "FOX",
+      "answer": 1
+    },
+    {
+      "ques_id": 6,
+      "question": "RQP, ONM, _, IHG, FED, find the missing letters.",
+      "option1": "LKI",
+      "option2": "LKJ",
+      "option3": "CDE",
+      "option4": "BAC",
+      "answer": 2
+    },
+    {
+      "ques_id": 7,
+      "question": "ENGINE : CAR",
+      "option1": "PETAL : FLOWER",
+      "option2": "PEN : PAPER",
+      "option3": "CAT : DOG",
+      "option4": "BALL : GAME",
+      "answer": 1
+    },
+    {
+      "ques_id": 8,
+      "question": "Pointing to a photograph, a man said, \"I have no brother, and that man's father is my father's son.\" Whose photograph was it?",
+      "option1": "360",
+      "option2": "730",
+      "option3": "480",
+      "option4": "None of these",
+      "answer": 4
+    },
+    {
+      "ques_id": 9,
+      "question": "From a certain point, Smriti walks 70 m towards the south. Then, she turns to her right & starts walking straight for another 70 m. Then, again turning to her left he walks for 60 m. She then turns to her left & walks for 70 m. How far is she from the starting point?",
+      "option1": "120 m",
+      "option2": "135 m",
+      "option3": "140 m",
+      "option4": "130 m",
+      "answer": 4
+    },
+    {
+      "ques_id": 10,
+      "question": "A and B are sisters. C and D are brothers. A's daughter is D's sister. How is B related to C?",
+      "option1": "Sister",
+      "option2": "Mother",
+      "option3": "Aunt",
+      "option4": "None of these",
+      "answer": 3
+    },
+    {
+      "ques_id": 11,
+      "question": "Sunil is the brother of Anil. Anil is the son of Sohan. Meena is Sohan's mother. How is Sunil related to Meena?",
+      "option1": "Grandson",
+      "option2": "Son",
+      "option3": "Grandfather",
+      "option4": "brother",
+      "answer": 1
+    },
+    {
+      "ques_id": 12,
+      "question": "An Informal Gathering occurs when a group of people get together in a casual, relaxed manner. Which situation below is the best example of an Informal Gathering?",
+      "option1": "Meena sends out 10 invitations for a bachelorette party she is giving for her elder sister.",
+      "option2": "On hearing about his promotion, Peter and his colleagues decided to go out for a quick drink in the evening.",
+      "option3": "Whenever she eats at a Chinese restaurant, Roop seems to run into Dibya.",
+      "option4": "A debating club meets on the first Sunday morning of every month.",
+      "answer": 2
+    },
+    {
+      "ques_id": 13,
+      "question": "In the nick of time means just at the critical moment. Which of the following situations is the best example of the nick of time?",
+      "option1": "Catholics sometimes fast during Lent.",
+      "option2": "It refers to the process of combining beats or pulses in music to establish the rhythm of the music.",
+      "option3": "A child ran into the road in front of the car; the driver managed to stop just in time.",
+      "option4": "Nick's nephew needs books immediately.",
+      "answer": 3
+    },
+    {
+      "ques_id": 14,
+      "question": "Call it a day is to quit work and go home. Which of the following situations given below is the best example of this idiom?",
+      "option1": "Rocky has perfect form throughout his Inning.",
+      "option2": "After playing together for ten years, the players finally decided to leave the team.",
+      "option3": "All athletes know the point where they have to finish the first lap.",
+      "option4": "The police called in Tony for interrogation.",
+      "answer": 1
+    },
+    {
+      "ques_id": 15,
+      "question": "10 coaches of a passenger train have got derailed and have blocked the railway track from both ends. Courses of action:\nI. The railway authorities should immediately send men and equipment and clear the spot\nII. All the trains running in both directions should be diverted immediately via other routes.",
+      "option1": "If only I follows",
+      "option2": "If neither I nor II follows",
+      "option3": "If either I or II follows",
+      "option4": "None of these",
+      "answer": 4
+    },
+    {
+      "ques_id": 16,
+      "question": "If in a certain language, NOIDA is coded as OPJEB, how is DELHI coded in that language?",
+      "option1": "CDKGH",
+      "option2": "EFMIJ",
+      "option3": "FGNJK",
+      "option4": "IHLED",
+      "answer": 2
+    },
+    {
+      "ques_id": 17,
+      "question": "In a certain code, TREE is written as UQFD. How is LEAF written in that code?",
+      "option1": "MFBG",
+      "option2": "MBZE",
+      "option3": "MDBE",
+      "option4": "KDZE",
+      "answer": 3
+    },
+    {
+      "ques_id": 18,
+      "question": "Statements:\n\nI) All heroes are villains.\nII) All villains are zeros.\nIII) Some heroes are jokers.\n\nConclusion:\n\ni) Some Jokers are heroes\nii) Some villains are jokers\niii) Some zeros are villains",
+      "option1": "Only I, II follow",
+      "option2": "All I, II, III follows",
+      "option3": "Only I, III follow",
+      "option4": "None of these",
+      "answer": 2
+    },
+    {
+      "ques_id": 19,
+      "question": "Peter is in the East of Tom and Tom is in the North of John. Mike is in the South of John then in which direction of Peter is Mike?",
+      "option1": "South-East",
+      "option2": "North-East",
+      "option3": "South-West",
+      "option4": "South",
+      "answer": 3
+    },
+    {
+      "ques_id": 20,
+      "question": "Peter is facing north. He turns to his right and walks 20 m and then turns to his left and walks 25 m. He then walks 25 m to his right. Next, he walks 50 m to his right. Finally, he turns to his right and walks 30 m. In which direction is he from the starting point?",
+      "option1": "South-East",
+      "option2": "South",
+      "option3": "South-West",
+      "option4": "West",
+      "answer": 1
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+com/example/quizapplication/databinding/ActivityCategoryBinding.java
+ com.example.quizapplication.databinding.ActivityCategoryBinding
+com/example/quizapplication/BuildConfig.java
+ com.example.quizapplication.BuildConfig
+com/example/quizapplication/databinding/ActivityMainBinding.java
+ com.example.quizapplication.databinding.ActivityMainBinding
+com/example/quizapplication/databinding/ActivityResultBinding.java
+ com.example.quizapplication.databinding.ActivityResultBinding
+com/example/quizapplication/databinding/ActivityLoginBinding.java
+ com.example.quizapplication.databinding.ActivityLoginBinding
+com/example/quizapplication/databinding/ActivitySignUpBinding.java
+ com.example.quizapplication.databinding.ActivitySignUpBinding

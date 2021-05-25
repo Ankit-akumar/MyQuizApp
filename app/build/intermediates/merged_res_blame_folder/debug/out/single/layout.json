@@ -1,0 +1,22 @@
+[
+    {
+        "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_category.xml",
+        "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\layout\\activity_category.xml"
+    },
+    {
+        "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_result.xml",
+        "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\layout\\activity_result.xml"
+    },
+    {
+        "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
+        "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_login.xml",
+        "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\layout\\activity_login.xml"
+    }
+]

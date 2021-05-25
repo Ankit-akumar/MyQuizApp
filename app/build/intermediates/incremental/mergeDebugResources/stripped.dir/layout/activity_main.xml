@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    android:padding="@dimen/screen_padding"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <ProgressBar
+                android:id="@+id/progress_bar"
+                style="@style/CircularDeterminantProgressBar"
+                android:layout_width="100dp"
+                android:layout_height="100dp"
+                android:layout_marginTop="@dimen/vertical_margin"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <TextView
+                android:id="@+id/tv_progress_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textAppearance="@style/TextAppearance.AppCompat.Large"
+                app:layout_constraintBottom_toBottomOf="@id/progress_bar"
+                app:layout_constraintEnd_toEndOf="@+id/progress_bar"
+                app:layout_constraintStart_toStartOf="@+id/progress_bar"
+                app:layout_constraintTop_toTopOf="@+id/progress_bar" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_question"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:textSize="@dimen/input_text_size" />
+
+        <TextView
+            android:id="@+id/tv_option1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:background="@drawable/default_option_bg"
+            android:padding="@dimen/horizontal_margin"
+            android:textSize="@dimen/input_text_size" />
+
+        <TextView
+            android:id="@+id/tv_option2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:background="@drawable/default_option_bg"
+            android:padding="@dimen/horizontal_margin"
+            android:textSize="@dimen/input_text_size" />
+
+        <TextView
+            android:id="@+id/tv_option3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:background="@drawable/default_option_bg"
+            android:padding="@dimen/horizontal_margin"
+            android:textSize="@dimen/input_text_size" />
+
+        <TextView
+            android:id="@+id/tv_option4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:background="@drawable/default_option_bg"
+            android:padding="@dimen/horizontal_margin"
+            android:textSize="@dimen/input_text_size" />
+
+        <Button
+            android:id="@+id/btn_next"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:background="@drawable/custom_button"
+            android:text="@string/submit"
+            android:textColor="@color/white" />
+
+        <TextView
+            android:id="@+id/tv_clear_response"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:layout_marginTop="@dimen/vertical_margin"
+            android:layout_marginEnd="@dimen/horizontal_margin"
+            android:text="@string/clear_response"
+            android:textColor="@color/color_primary_dark" />
+
+    </LinearLayout>
+
+</ScrollView>
+
+
+
+
+
+
+

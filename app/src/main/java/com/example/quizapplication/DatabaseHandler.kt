@@ -2,6 +2,7 @@ package com.example.quizapplication
 
 import android.content.ContentValues
 import android.content.Context
+import android.database.Cursor
 import android.database.sqlite.SQLiteDatabase
 import android.database.sqlite.SQLiteException
 import android.database.sqlite.SQLiteOpenHelper
@@ -13,7 +14,7 @@ class DatabaseHandler private constructor(context: Context) :
     companion object {
         // Database Information
         const val DATABASE_NAME = "QuizApplicationDatabase"
-        const val DATABASE_VERSION = 2
+        const val DATABASE_VERSION = 3
 
         // Table names
         const val TABLE_USERS = "Users"
@@ -23,6 +24,7 @@ class DatabaseHandler private constructor(context: Context) :
         const val KEY_USERNAME = "username"
         const val KEY_USER_PASSWORD = "password"
         const val KEY_USER_EMAIL = "email"
+        const val KEY_USER_SCORE = "score"
 
         // Making class singleton
         var databaseHandler: DatabaseHandler? = null     // Database handler object
@@ -42,7 +44,8 @@ class DatabaseHandler private constructor(context: Context) :
                 "$KEY_USERID INTEGER PRIMARY KEY, " +
                 "$KEY_USERNAME TEXT NOT NULL," +
                 "$KEY_USER_EMAIL TEXT NOT NULL," +
-                "$KEY_USER_PASSWORD TEXT NOT NULL)"
+                "$KEY_USER_PASSWORD TEXT NOT NULL," +
+                "$KEY_USER_SCORE INTEGER NOT NULL)"
 
         db?.execSQL(createUserTable)
     }
@@ -83,6 +86,7 @@ class DatabaseHandler private constructor(context: Context) :
             record.put(KEY_USERNAME, user.username)
             record.put(KEY_USER_EMAIL, user.email)
             record.put(KEY_USER_PASSWORD, user.password)
+            record.put(KEY_USER_SCORE, user.score)
             db.insertOrThrow(TABLE_USERS, null, record)
             db.setTransactionSuccessful()
         } catch (ex: SQLiteException) {
@@ -154,5 +158,35 @@ class DatabaseHandler private constructor(context: Context) :
             db.close()
         }
         return user
+    }
+
+    fun setUserScore(userid: Long, score: Int) {
+        val db = writableDatabase
+        var newScore = 0
+        try {
+            db.beginTransaction()
+            var cursor =
+                db.rawQuery(
+                    "SELECT $KEY_USER_SCORE FROM $TABLE_USERS WHERE $KEY_USERID = $userid",
+                    null
+                )
+            if (cursor.moveToFirst()) {
+                newScore = cursor.getInt(cursor.getColumnIndex(KEY_USER_SCORE)) + score
+            } else {
+                Log.d("myError", "Error has occurred")
+                return
+            }
+            cursor = db.rawQuery(
+                "UPDATE $TABLE_USERS SET $KEY_USER_SCORE = ? WHERE $KEY_USERID = $userid",
+                arrayOf(newScore.toString())
+            )
+            cursor.close()
+            db.setTransactionSuccessful()
+        } catch (ex: SQLiteException) {
+            ex.printStackTrace()
+        } finally {
+            db.endTransaction()
+            db.close()
+        }
     }
 }

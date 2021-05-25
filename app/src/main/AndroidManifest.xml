@@ -10,6 +10,12 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.QuizApplication">
         <activity
+            android:name=".ResultActivity"
+            android:theme="@style/CustomNoActionBarTheme" />
+        <activity
+            android:name=".MainActivity"
+            android:theme="@style/CustomNoActionBarTheme" />
+        <activity
             android:name=".SignUpActivity"
             android:theme="@style/CustomNoActionBarTheme"
             android:windowSoftInputMode="adjustPan" />

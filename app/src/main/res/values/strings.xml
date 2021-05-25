@@ -36,4 +36,16 @@
     <string name="reasoning">Reasoning</string>
     <string name="verbal_ability">Verbal Ability</string>
     <string name="choose_a_quiz_category">Choose a Quiz category</string>
+    <string name="title_activity_main">MainActivity</string>
+    <string name="username_or_email">Username or email</string>
+    <string name="submit">submit</string>
+    <string name="clear_response">Clear Response</string>
+    <string name="restart">restart</string>
+    <string name="new_quiz">new quiz</string>
+    <string name="correct">Correct</string>
+    <string name="incorrect">Incorrect</string>
+    <string name="_0">0</string>
+    <string name="unattempted">Unattempted</string>
+    <string name="result_image">result image</string>
+    <string name="exit">exit</string>
 </resources>
