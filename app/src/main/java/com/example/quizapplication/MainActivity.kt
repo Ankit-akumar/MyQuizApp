@@ -1,7 +1,9 @@
 package com.example.quizapplication
 
+import android.content.DialogInterface
 import android.content.Intent
 import android.os.Bundle
+import androidx.appcompat.app.AlertDialog
 import androidx.appcompat.app.AppCompatActivity
 import kotlinx.android.synthetic.main.activity_main.*
 import org.json.JSONException
@@ -141,6 +143,24 @@ class MainActivity : AppCompatActivity() {
         tv_clear_response.setOnClickListener {
             setDefaultBackgroundOfAllOptions()
             selectedOption = 0
+        }
+
+        // if end quiz button is selected then show dialog box to user if selected yes then move back to Category activity
+        btn_end_quiz.setOnClickListener {
+            val builder = AlertDialog.Builder(this)
+            builder.setTitle("End Quiz")
+            builder.setMessage("Are you sure you want to end this quiz? Your progress would not be saved.")
+            builder.setPositiveButton("Yes") { _, _ ->
+                run {
+                    val intent = Intent(this, CategoryActivity::class.java)
+                    startActivity(intent)
+                    finish()
+                }
+            }
+            builder.setNegativeButton("No") { dialogInterface, _ -> dialogInterface.cancel() }
+            val alertDialog = builder.create()
+            alertDialog.setCancelable(false)
+            alertDialog.show()
         }
 
     }

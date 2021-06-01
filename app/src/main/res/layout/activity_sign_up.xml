@@ -124,7 +124,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin"
-                android:background="@drawable/custom_button"
                 android:text="@string/next"
                 android:textColor="@color/white"
                 android:textSize="@dimen/subtitle_text_size"
@@ -149,7 +148,7 @@
                 android:layout_marginStart="@dimen/horizontal_margin"
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:text="@string/login_here"
-                android:textColor="@color/color_primary"
+                android:textColor="?attr/colorAccent"
                 app:layout_constraintStart_toEndOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/btn_sign_up"
                 tools:layout_marginTop="@dimen/vertical_margin" />

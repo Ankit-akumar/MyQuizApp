@@ -58,28 +58,29 @@
 35            android:windowSoftInputMode="adjustPan" />
 35-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:25:13-52
 36        <activity
-36-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:26:9-28:61
+36-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:26:9-29:20
 37            android:name="com.example.quizapplication.CategoryActivity"
 37-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:27:13-45
-38            android:theme="@style/CustomNoActionBarTheme" />
+38            android:theme="@style/CustomNoActionBarTheme" >
 38-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:28:13-58
-39        <activity
-39-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:29:9-37:20
-40            android:name="com.example.quizapplication.SplashScreen"
-40-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:30:13-41
-41            android:theme="@style/SplashScreenStyle" >
-41-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:31:13-53
-42            <intent-filter>
-42-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:32:13-36:29
-43                <action android:name="android.intent.action.MAIN" />
-43-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:33:17-69
-43-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:33:25-66
-44
-45                <category android:name="android.intent.category.LAUNCHER" />
-45-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:35:17-77
-45-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:35:27-74
-46            </intent-filter>
-47        </activity>
-48    </application>
-49
-50</manifest>
+39        </activity>
+40        <activity
+40-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:30:9-37:20
+41            android:name="com.example.quizapplication.SplashScreen"
+41-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:31:13-41
+42            android:theme="@style/SplashScreenStyle" >
+42-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:32:13-53
+43            <intent-filter>
+43-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:33:13-36:29
+44                <action android:name="android.intent.action.MAIN" />
+44-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:34:17-69
+44-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:34:25-66
+45
+46                <category android:name="android.intent.category.LAUNCHER" />
+46-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:35:17-77
+46-->D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:35:27-74
+47            </intent-filter>
+48        </activity>
+49    </application>
+50
+51</manifest>

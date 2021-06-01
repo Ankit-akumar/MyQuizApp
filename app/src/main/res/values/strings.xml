@@ -48,4 +48,5 @@
     <string name="unattempted">Unattempted</string>
     <string name="result_image">result image</string>
     <string name="exit">exit</string>
+    <string name="end_quiz_button">End quiz button</string>
 </resources>

@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@color/white"
+    android:background="?attr/backgroundColor"
     android:gravity="center_horizontal"
     android:orientation="vertical"
     android:padding="@dimen/screen_padding"
@@ -21,14 +21,16 @@
         android:layout_width="250dp"
         android:layout_height="250dp"
         android:contentDescription="@string/result_image"
-        android:src="@drawable/victory_bg" />
+        android:src="@drawable/results_image" />
 
     <androidx.cardview.widget.CardView
         android:id="@+id/cv_result_board"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:elevation="@dimen/horizontal_margin">
+        android:background="?attr/colorSurface"
+        android:elevation="@dimen/horizontal_margin"
+        app:cardElevation="@dimen/horizontal_margin">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -106,51 +108,51 @@
                     android:textStyle="bold" />
 
             </LinearLayout>
+
+            <ProgressBar
+                android:id="@+id/progress_bar_result"
+                style="@android:style/Widget.ProgressBar.Horizontal"
+                android:layout_width="match_parent"
+                android:layout_height="20dp"
+                android:layout_marginTop="20dp"
+                android:progress="50"
+                android:progressBackgroundTint="@color/red"
+                android:progressTint="@color/green"
+                app:layout_constraintTop_toBottomOf="@id/cv_result_board" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="20dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btn_play_again"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="16dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="?attr/colorPrimaryVariant"
+                    android:text="@string/restart"
+                    android:textColor="@color/white"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <Button
+                    android:id="@+id/btn_new_quiz"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="16dp"
+                    android:layout_weight="1"
+                    android:backgroundTint="@color/white"
+                    android:text="@string/new_quiz"
+                    android:textColor="@color/black"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </LinearLayout>
+
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
-    <ProgressBar
-        android:id="@+id/progress_bar_result"
-        style="@android:style/Widget.ProgressBar.Horizontal"
-        android:layout_width="match_parent"
-        android:layout_height="20dp"
-        android:layout_marginTop="20dp"
-        android:progress="50"
-        android:progressBackgroundTint="@color/red"
-        android:progressTint="@color/green"
-        app:layout_constraintTop_toBottomOf="@id/cv_result_board" />
-
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:orientation="horizontal">
-
-        <Button
-            android:id="@+id/btn_play_again"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginEnd="16dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/very_dark_blue"
-            android:text="@string/restart"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <Button
-            android:id="@+id/btn_new_quiz"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_weight="1"
-            android:backgroundTint="@color/white"
-            android:text="@string/new_quiz"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:textColor="@color/black"/>
-
-    </LinearLayout>
-
 </LinearLayout>

@@ -64,7 +64,8 @@
                 android:layout_height="wrap_content"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tv_warning">
+                app:layout_constraintTop_toBottomOf="@id/tv_warning"
+                android:background="?attr/colorSurface">
 
                 <androidx.appcompat.widget.AppCompatEditText
                     android:id="@+id/et_username"
@@ -107,7 +108,6 @@
                 android:layout_width="0dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="@dimen/vertical_margin"
-                android:background="@drawable/custom_button"
                 android:text="@string/login"
                 android:textColor="@color/white"
                 android:textSize="@dimen/subtitle_text_size"
@@ -132,7 +132,7 @@
                 android:layout_marginStart="@dimen/horizontal_margin"
                 android:layout_marginTop="@dimen/vertical_margin"
                 android:text="@string/signup_here"
-                android:textColor="@color/color_primary"
+                android:textColor="?attr/colorAccent"
                 app:layout_constraintStart_toEndOf="@+id/textView2"
                 app:layout_constraintTop_toBottomOf="@+id/btn_login"
                 tools:layout_marginTop="@dimen/vertical_margin" />

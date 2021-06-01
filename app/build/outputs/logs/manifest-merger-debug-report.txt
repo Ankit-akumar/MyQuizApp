@@ -125,23 +125,23 @@ ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidMa
 	android:name
 		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:23:13-42
 activity#com.example.quizapplication.CategoryActivity
-ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:26:9-28:61
+ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:26:9-29:20
 	android:theme
 		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:28:13-58
 	android:name
 		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:27:13-45
 activity#com.example.quizapplication.SplashScreen
-ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:29:9-37:20
+ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:30:9-37:20
 	android:theme
-		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:31:13-53
+		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:32:13-53
 	android:name
-		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:30:13-41
+		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:31:13-41
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:32:13-36:29
+ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:33:13-36:29
 action#android.intent.action.MAIN
-ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:33:17-69
+ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:34:17-69
 	android:name
-		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:33:25-66
+		ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:34:25-66
 category#android.intent.category.LAUNCHER
 ADDED from D:\Programming\AndroidProjects\QuizApplication\app\src\main\AndroidManifest.xml:35:17-77
 	android:name

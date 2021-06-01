@@ -44,8 +44,16 @@
         "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
     },
     {
+        "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_results_image.png.flat",
+        "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\drawable\\results_image.png"
+    },
+    {
         "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xhdpi_ic_launcher.png.flat",
         "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\mipmap-xhdpi\\ic_launcher.png"
+    },
+    {
+        "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_dark_background.png.flat",
+        "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\drawable\\dark_background.png"
     },
     {
         "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\res\\merged\\debug\\font_roboto.ttf.flat",
@@ -78,6 +86,10 @@
     {
         "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_victory_bg.jpg.flat",
         "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\drawable\\victory_bg.jpg"
+    },
+    {
+        "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_end_quiz_48.png.flat",
+        "source": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\src\\main\\res\\drawable\\end_quiz_48.png"
     },
     {
         "merged": "D:\\Programming\\AndroidProjects\\QuizApplication\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_baseline_exit_to_app_24.xml.flat",

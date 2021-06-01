@@ -5,7 +5,7 @@
     android:id="@+id/drawer"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/background"
+    android:background="?attr/backgroundColor"
     android:padding="@dimen/screen_padding"
     tools:context=".CategoryActivity"
     tools:openDrawer="start">
@@ -27,6 +27,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="@dimen/vertical_margin"
         android:clickable="true"
+        android:elevation="@dimen/horizontal_margin"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="@dimen/card_corner_radius"
         app:layout_constraintEnd_toEndOf="parent"
@@ -58,6 +59,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="@dimen/vertical_margin"
         android:clickable="true"
+        android:elevation="@dimen/horizontal_margin"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="@dimen/card_corner_radius"
         app:layout_constraintEnd_toEndOf="parent"
@@ -89,6 +91,7 @@
         android:layout_height="200dp"
         android:layout_marginTop="@dimen/vertical_margin"
         android:clickable="true"
+        android:elevation="@dimen/horizontal_margin"
         android:foreground="?android:attr/selectableItemBackground"
         app:cardCornerRadius="@dimen/card_corner_radius"
         app:layout_constraintEnd_toEndOf="parent"
@@ -113,6 +116,5 @@
             android:textSize="@dimen/subtitle_text_size" />
 
     </androidx.cardview.widget.CardView>
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

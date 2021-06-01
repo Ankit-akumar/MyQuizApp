@@ -3,9 +3,8 @@ package com.example.quizapplication
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.view.View
+import android.widget.Toast
 import kotlinx.android.synthetic.main.activity_category.*
-
 class CategoryActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -25,9 +24,10 @@ class CategoryActivity : AppCompatActivity() {
         }
 
         cv_verbal_test.setOnClickListener {
-            val intent = Intent(this, MainActivity::class.java)
-            Constants.CATEGORY_SELECTED = "verbal ability"
-            startActivity(intent)
+            Toast.makeText(this, "Coming soon...",Toast.LENGTH_SHORT).show()
+//            val intent = Intent(this, MainActivity::class.java)
+//            Constants.CATEGORY_SELECTED = "verbal ability"
+//            startActivity(intent)
         }
     }
 }

@@ -1,7 +1,7 @@
-com/example/quizapplication/databinding/ActivityCategoryBinding.java
- com.example.quizapplication.databinding.ActivityCategoryBinding
 com/example/quizapplication/BuildConfig.java
  com.example.quizapplication.BuildConfig
+com/example/quizapplication/databinding/ActivityCategoryBinding.java
+ com.example.quizapplication.databinding.ActivityCategoryBinding
 com/example/quizapplication/databinding/ActivityMainBinding.java
  com.example.quizapplication.databinding.ActivityMainBinding
 com/example/quizapplication/databinding/ActivityResultBinding.java

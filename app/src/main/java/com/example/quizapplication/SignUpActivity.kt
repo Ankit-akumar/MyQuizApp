@@ -1,10 +1,10 @@
 package com.example.quizapplication
 
 import android.content.Intent
-import android.content.res.ColorStateList
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.view.View
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_login.*
 import kotlinx.android.synthetic.main.activity_sign_up.*
 import kotlinx.android.synthetic.main.activity_sign_up.et_password
@@ -64,31 +64,33 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun isDataValid(): Boolean {
+        val redColor = ContextCompat.getColor(this, R.color.red)
+
         // username should have letters and digits only
         if (!et_username.text!!.all { it.isLetterOrDigit() }) {
             tv_warning.text = getString(R.string.username_must_contain_letter_and_digits_only)
-            et_username.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.red))
+            et_username.setTextColor(redColor)
             return false
         }
 
         // username must be longer than 4 characters
         if (et_username.text!!.length < 5) {
             tv_warning.text = getString(R.string.username_must_have_at_least_5_characters)
-            et_username.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.red))
+            et_username.setTextColor(redColor)
             return false
         }
 
         // Email entered matches email pattern
         if (!android.util.Patterns.EMAIL_ADDRESS.matcher(et_email.text.toString()).matches()) {
             tv_warning.text = getString(R.string.invalid_email)
-            et_email.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.red))
+            et_email.setTextColor(redColor)
             return false
         }
 
         // password must be longer than 4 characters
         if (et_password.text!!.length < 5) {
             tv_warning.text = getString(R.string.password_must_have_at_least_5_characters)
-            et_password.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.red))
+            et_password.setTextColor(redColor)
             return false
         }
 
@@ -96,10 +98,11 @@ class SignUpActivity : AppCompatActivity() {
     }
 
     private fun setDefaults() {
-        et_username.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
-        et_username.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
-        et_email.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
-        et_password.backgroundTintList = ColorStateList.valueOf(resources.getColor(R.color.black))
+        val blackColor = ContextCompat.getColor(this, R.color.black)
+        et_username.setTextColor(blackColor)
+        et_username.setTextColor(blackColor)
+        et_email.setTextColor(blackColor)
+        et_password.setTextColor(blackColor)
         tv_warning.visibility = View.INVISIBLE
     }
 }

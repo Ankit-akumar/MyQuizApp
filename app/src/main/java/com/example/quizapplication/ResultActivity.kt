@@ -50,14 +50,12 @@ class ResultActivity : AppCompatActivity() {
             builder.setMessage("Are you sure you want to exit?")
             builder.setPositiveButton("Yes") { _, _ ->
                 run {
-                    moveTaskToBack(true);
-                    android.os.Process.killProcess(android.os.Process.myPid());
-                    exitProcess(1);
+                    moveTaskToBack(true)
+                    android.os.Process.killProcess(android.os.Process.myPid())
+                    exitProcess(1)
                 }
             }
-            builder.setNegativeButton("No") { dialogInterface, _ ->
-                dialogInterface.cancel()
-            }
+            builder.setNegativeButton("No") { dialogInterface, _ -> dialogInterface.cancel() }
 
             val alertDialog = builder.create()
 

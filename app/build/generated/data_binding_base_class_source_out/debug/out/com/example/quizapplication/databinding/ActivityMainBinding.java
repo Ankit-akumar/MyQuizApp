@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ProgressBar;
 import android.widget.ScrollView;
 import android.widget.TextView;
@@ -19,6 +20,9 @@ import java.lang.String;
 public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   private final ScrollView rootView;
+
+  @NonNull
+  public final ImageButton btnEndQuiz;
 
   @NonNull
   public final Button btnNext;
@@ -47,11 +51,12 @@ public final class ActivityMainBinding implements ViewBinding {
   @NonNull
   public final TextView tvQuestion;
 
-  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull Button btnNext,
-      @NonNull ProgressBar progressBar, @NonNull TextView tvClearResponse,
+  private ActivityMainBinding(@NonNull ScrollView rootView, @NonNull ImageButton btnEndQuiz,
+      @NonNull Button btnNext, @NonNull ProgressBar progressBar, @NonNull TextView tvClearResponse,
       @NonNull TextView tvOption1, @NonNull TextView tvOption2, @NonNull TextView tvOption3,
       @NonNull TextView tvOption4, @NonNull TextView tvProgressBar, @NonNull TextView tvQuestion) {
     this.rootView = rootView;
+    this.btnEndQuiz = btnEndQuiz;
     this.btnNext = btnNext;
     this.progressBar = progressBar;
     this.tvClearResponse = tvClearResponse;
@@ -90,6 +95,12 @@ public final class ActivityMainBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
+      id = R.id.btn_end_quiz;
+      ImageButton btnEndQuiz = rootView.findViewById(id);
+      if (btnEndQuiz == null) {
+        break missingId;
+      }
+
       id = R.id.btn_next;
       Button btnNext = rootView.findViewById(id);
       if (btnNext == null) {
@@ -144,8 +155,8 @@ public final class ActivityMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityMainBinding((ScrollView) rootView, btnNext, progressBar, tvClearResponse,
-          tvOption1, tvOption2, tvOption3, tvOption4, tvProgressBar, tvQuestion);
+      return new ActivityMainBinding((ScrollView) rootView, btnEndQuiz, btnNext, progressBar,
+          tvClearResponse, tvOption1, tvOption2, tvOption3, tvOption4, tvProgressBar, tvQuestion);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

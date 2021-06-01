@@ -20,7 +20,7 @@
                 android:useLevel="true">
                 <gradient
                     android:startColor="@color/very_light_blue"
-                    android:centerColor="@color/color_primary"
+                    android:centerColor="?attr/colorPrimary"
                     android:endColor="@color/very_dark_blue"
                     android:type="sweep" />
             </shape>

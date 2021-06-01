@@ -35,7 +35,8 @@
             android:windowSoftInputMode="adjustPan" />
         <activity
             android:name="com.example.quizapplication.CategoryActivity"
-            android:theme="@style/CustomNoActionBarTheme" />
+            android:theme="@style/CustomNoActionBarTheme" >
+        </activity>
         <activity
             android:name="com.example.quizapplication.SplashScreen"
             android:theme="@style/SplashScreenStyle" >

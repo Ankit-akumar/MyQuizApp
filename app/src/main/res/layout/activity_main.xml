@@ -14,6 +14,15 @@
         android:gravity="center_horizontal"
         android:orientation="vertical">
 
+        <ImageButton
+            android:id="@+id/btn_end_quiz"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="end"
+            android:backgroundTint="?attr/backgroundColor"
+            android:contentDescription="@string/end_quiz_button"
+            android:src="@drawable/end_quiz_48" />
+
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
@@ -55,6 +64,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/vertical_margin"
             android:background="@drawable/default_option_bg"
+            android:elevation="@dimen/horizontal_margin"
             android:padding="@dimen/horizontal_margin"
             android:textSize="@dimen/input_text_size" />
 
@@ -64,6 +74,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/vertical_margin"
             android:background="@drawable/default_option_bg"
+            android:elevation="@dimen/horizontal_margin"
             android:padding="@dimen/horizontal_margin"
             android:textSize="@dimen/input_text_size" />
 
@@ -73,6 +84,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/vertical_margin"
             android:background="@drawable/default_option_bg"
+            android:elevation="@dimen/horizontal_margin"
             android:padding="@dimen/horizontal_margin"
             android:textSize="@dimen/input_text_size" />
 
@@ -82,6 +94,7 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/vertical_margin"
             android:background="@drawable/default_option_bg"
+            android:elevation="@dimen/horizontal_margin"
             android:padding="@dimen/horizontal_margin"
             android:textSize="@dimen/input_text_size" />
 
@@ -90,7 +103,6 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="20dp"
-            android:background="@drawable/custom_button"
             android:text="@string/submit"
             android:textColor="@color/white" />
 
@@ -102,7 +114,7 @@
             android:layout_marginTop="@dimen/vertical_margin"
             android:layout_marginEnd="@dimen/horizontal_margin"
             android:text="@string/clear_response"
-            android:textColor="@color/color_primary_dark" />
+            android:textColor="?attr/colorAccent" />
 
     </LinearLayout>
 
